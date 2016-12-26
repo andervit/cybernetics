@@ -1,0 +1,201 @@
+{% extends "core/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<header id="carousel" class="carousel slide hidden-xs">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1" class=""></li>
+        <li data-target="#carousel" data-slide-to="2" class=""></li>
+        <li data-target="#carousel" data-slide-to="3" class=""></li>
+        <li data-target="#carousel" data-slide-to="4" class=""></li>
+        <li data-target="#carousel" data-slide-to="5" class=""></li>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item next left">
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{% static 'img/abiturient.jpg'%}');"></div>
+            <div class="carousel-caption">
+                <h2 class="slider-header-1">Для абітурієнтів</h2>
+
+                <h3 class="slider-header-2">Багато корисної інформації для вас.</h3>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{% static 'img/facultet.jpg' %}');"></div>
+            <div class="carousel-caption">
+                <h2 class="slider-header-1">Про факультет</h2>
+
+                <h3 class="slider-header-2">Історія.Адміністрація.Студентське життя.</h3>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{% static
+                'img/cafedru.jpg' %}');"></div>
+            <div class="carousel-caption">
+                <h2 class="slider-header-1">Кафедри</h2>
+
+                <h3 class="slider-header-2">9 кафедр - 132 викладача (49 професорів, 60 доцентів, 23 асистенти).</h3>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{% static 'img/chitalkd.png' %}');"></div>
+            <div class="carousel-caption">
+                <h2 class="slider-header-1">Читалка</h2>
+
+                <h3 class="slider-header-2">Тепло.Тихо.Wi-Fi.</h3>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{% static 'img/bookshelf.jpg' %}');"></div>
+            <div class="carousel-caption">
+                <h2 class="slider-header-1">Електронна бібліотека</h2>
+
+                <h3 class="slider-header-2">Підручники, монографії, методички.</h3>
+            </div>
+        </div>
+        <div class="item active left">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{% static 'img/conference.jpg'%}');"></div>
+            <div class="carousel-caption">
+                <h2 class="slider-header-1">Наукові конференції</h2>
+
+                <h3 class="slider-header-2">Зручно.Цікаво.Корисно.</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control stop-carousel" href="#carousel" data-slide="prev">
+        <img class="icon-prev icon-left" src='{% static "img/Shape-left.png"%}' alt="">
+    </a>
+    <a class="right carousel-control stop-carousel" href="#carousel" data-slide="next">
+        <img class="icon-prev icon-right" src="{% static 'img/Shape-right.png' %}" alt="">
+    </a>
+
+</header>
+
+<header class="mobile-first-screen visible-xs">
+
+</header>
+
+<div class="main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="information-block center-block fade-bottom">
+                            <h2 class="header-title slide-bottom">Вступ</h2>
+                            <a href="" class="header-text">
+                                <div class="image-entrants"></div>
+                                Інформація для абітурієнту</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="information-block center-block fade-bottom">
+                            <h2 class="header-title slide-bottom">Розклад</h2>
+                            <a href="/cybernetics/schedule.html" class="header-text">
+                                <div class="image-schedule"></div>
+                                Переглянути</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-0">
+                        <div class="calendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="news">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="header-news center-block fade-bottom">
+                        <h2 class="header-title slide-bottom">Новини</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for new in news %}
+                <div class="col-sm-4">
+                    <div class="news-block center-block">
+                        <a href="news/{{ new.id }}">
+                            <div class="image-block">
+                                <img src="{{ new.image.url }}" class="news-image" alt="">
+                            </div>
+                            <h3 class="header-title">{{ new.title }}</h3>
+                        </a>
+
+                        <p class="date">{{ new.pub_date }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="news-block-btn">
+                        <button class="btn btn-news">Всі новини</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="mini-carousel">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="slider-mini center-block">
+                    <a href="http://indexator.16mb.com/" class="link-slider">
+                        <div>
+                            <img src="img/index.png" class="carousel-image" alt="">
+
+                            <h3 class="carousel-text">Online програма перевірки практичних знань</h3>
+                        </div>
+                    </a>
+                    <a href="http://rmn.univ.kiev.ua/" class="link-slider">
+                        <div>
+                            <img src="img/logoukr.png" class="carousel-image" alt="">
+
+                            <h3 class="carousel-text size-rada">Рада Молодих Вчених</h3>
+                        </div>
+                    </a>
+                    <a href="http://www.e-olimp.com.ua/" class="link-slider">
+                        <div>
+                            <img src="img/66.jpg" class="carousel-image" alt="">
+
+                            <h3 class="carousel-text">Портал підготовки до олімпіад з програмування</h3>
+                        </div>
+                    </a>
+                    <a href="http://scsp.org.ua" class="link-slider">
+                        <div>
+                            <img src="img/ntsa2.png" class="carousel-image" alt="">
+
+                            <h3 class="carousel-text">Наукове товариство студентів та аспірантів</h3>
+                        </div>
+                    </a>
+                    <a href="http://hostel16.univ.kiev.ua" class="link-slider">
+                        <div>
+                            <img src="img/44.jpg" class="carousel-image" alt="">
+
+                            <h3 class="carousel-text">Веб-сайт гуртожитку факультету кібернетики</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
