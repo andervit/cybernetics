@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import *
 from .models import *
 # Create your views here.
 def home(request):
@@ -13,3 +13,7 @@ def new(request, id):
     new = News.objects.get(id=id)
     news = News.objects.filter(published=True).exclude(id=id)[0:2]
     return render(request, 'core/new.html', {'new':new, 'news':news})
+
+def article(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    return render(request, 'core/article.html', {'article':article})

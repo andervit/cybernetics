@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tinymce',
+    'django_summernote',
     'core',
 ]
 
@@ -120,3 +120,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+USE_I18N = True
+USE_L10N = False
+
+LANGUAGE_CODE = 'ru-RU'
+DATE_FORMAT = 'd E Y'
+
+#local
+MEDIA_ROOT = "/home/vitalii/project/cybernetics/media"
+MEDIA_URL = "media/"

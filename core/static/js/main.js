@@ -52,8 +52,8 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         speed: 300,
-        prevArrow: "<img class='a-left control-c prev slick-prev shape-left' src='img/Shape-left.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next shape-right' src='img/Shape-right.png'>",
+        prevArrow: "<img class='a-left control-c prev slick-prev shape-left' src='/static/img/Shape-left.png'>",
+        nextArrow: "<img class='a-right control-c next slick-next shape-right' src='/static/img/Shape-right.png'>",
         slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [

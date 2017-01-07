@@ -10,7 +10,7 @@ class Department(models.Model):
     name = models.CharField(max_length=250)
     short_name = models.CharField(max_length=250)
     chef = models.ForeignKey('Professor', null=True, blank=True,related_name='chef')
-    short_info = HTMLField()
+    short_info = models.TextField(null=True, blank=True)
     phone = models.CharField(max_length=150)
     adress = models.CharField(max_length=150)
     domen = models.CharField(max_length=150)
@@ -23,12 +23,12 @@ class Professor(models.Model):
     name = models.CharField(max_length=250)
     department = models.ForeignKey(Department, null=True, blank=True)
     position = models.CharField(max_length=250)
-    interest = HTMLField()
+    interest = models.TextField(null=True, blank=True)
     phone = models.CharField(max_length=150)
     adress = models.CharField(max_length=150)
     email = models.CharField(max_length=150)
     domen = models.CharField(max_length=150)
-    detail = HTMLField()
+    detail = models.TextField(null=True, blank=True)
     photo = models.ImageField()
 
     def __str__(self):
@@ -36,7 +36,7 @@ class Professor(models.Model):
 
 class Specialization(models.Model):
     name = models.CharField(max_length=250)
-    description = HTMLField()
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -55,9 +55,9 @@ class Administration(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=250)
-    text = HTMLField()
+    text = models.TextField(null=True, blank=True)
     pub_date = models.DateField()
-    photo = models.ImageField(null=True, upload_to="/static/img")
+    photo = models.ImageField(null=True, upload_to="img")
     published = models.BooleanField(default=False)
 
     def __str__(self):
@@ -73,9 +73,14 @@ class CustomUser(User):
 class Photo(models.Model):
     alt = models.CharField(max_length=250)
     photo = models.ImageField()
-
+    def __str__ (self):
+        return self.alt
 
 class Article(models.Model):
     title = models.CharField(max_length=250)
-    text = HTMLField()
+    text = models.TextField(null=True, blank=True)
     image = models.ManyToManyField(Photo, null=True, blank=True)
+    slug = models.CharField(max_length=250)
+
+    def __str__ (self):
+        return self.title
