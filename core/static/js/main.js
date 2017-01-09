@@ -47,58 +47,6 @@ $(document).ready(function () {
         search_mobile.css('left', '-225px');
     });
 
-    //Slider-mini
-    $('.slider-mini').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        prevArrow: "<img class='a-left control-c prev slick-prev shape-left' src='/static/img/Shape-left.png'>",
-        nextArrow: "<img class='a-right control-c next slick-next shape-right' src='/static/img/Shape-right.png'>",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-
-        ]
-    });
-
-    //Fix popup
-    var modal = $('.modal');
-
-    modal.on('show.bs.modal', function () {
-        if ($(document).height() > $(window).height()) {
-            // no-scroll
-            $('body').addClass("modal-open-noscroll");
-        }
-        else {
-            $('body').removeClass("modal-open-noscroll");
-        }
-    });
-
-    modal.on('hide.bs.modal', function () {
-        $('body').removeClass("modal-open-noscroll");
-    });
 
     //Accordion
     var accordionsMenu = $('.cd-accordion-menu');
@@ -115,42 +63,29 @@ $(document).ready(function () {
         });
     }
 
-    //table
+    //open and close left navbar
+    var left_block = $('#left-navbar');
 
-    $('.selectpicker').on('click', function () {
-        $('.schedule-table').removeClass('hidden');
+    $('#close-left-navbar').on('click', function () {
 
+        $('.open-btn-block').fadeIn();
 
-
-
-            //Width content block
-            var height = $('.main-content-block').height();
-        console.log(height);
-            $('#menu').css('min-height', height);
-
-    });
-
-
-    // $("#lightgallery").lightGallery();
-
-    addEventListener('DOMContentLoaded', function () {
-        pickmeup.defaults.locales['ua'] = {
-            days: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П' + "'" + 'ятница', 'Субота'],
-            daysShort: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            daysMin: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            months: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
-            monthsShort: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру']
-        };
-        pickmeup('.calendar', {
-            flat : true,
-            select_day : true,
-            select_month : false,
-            select_year : false,
-            locale : 'ua'
-
+        left_block.animate({
+            left: "-=+300px"
         });
 
+
     });
+
+    $('#open-left-navbar').on('click', function () {
+
+        left_block.animate({
+            left: "-=-300px"
+        });
+
+        $('.open-btn-block').fadeOut(1000);
+    });
+
     //Activate logo
     setInterval(activeLogo, 5000);
 
@@ -181,8 +116,69 @@ $(document).ready(function () {
         logo_image.addClass('active-logo');
         logo_image.fadeIn();
     }
+
+    //schedule
+
+    $('#open-schedule li').on('click', function () {
+        $('.schedule-table').html('');
+        $.get( "/get_schedule", { g: $(this).text()} )
+        .done(function( data ) {
+
+            for (variable in data) {
+                var block = $('.schedule-table');
+                var res = "<div class='weekday'><div class='name-weekday'><p>" + variable + "</p></div>";
+                var para_list = data[variable];
+                jQuery.each(para_list, function() {
+                    res = res + "<div class='para'><p>" + this[0] + '. ' + this[1] + '</p><p>' + this[2] + '</p><p>' + this[3] + '</p></div>';
+                });
+                res = res + '</div>';
+                block.append(res);
+            }
+            
+        });
+        $('.schedule-table').removeClass('hidden');
+        $('.weekday-text').removeClass('hidden');
+    });
 });
 
+$(document).ready(function () {
+    $(".btn-select").each(function (e) {
+        var value = $(this).find("ul li.selected").html();
+        if (value != undefined) {
+            $(this).find(".btn-select-input").val(value);
+            $(this).find(".btn-select-value").html(value);
+        }
+    });
+});
 
+$(document).on('click', '.btn-select', function (e) {
+    e.preventDefault();
+    var ul = $(this).find("ul");
+    if ($(this).hasClass("active")) {
+        if (ul.find("li").is(e.target)) {
+            var target = $(e.target);
+            target.addClass("selected").siblings().removeClass("selected");
+            var value = target.html();
+            $(this).find(".btn-select-input").val(value);
+            $(this).find(".btn-select-value").html(value);
+        }
+        ul.hide();
+        $(this).removeClass("active");
+    }
+    else {
+        $('.btn-select').not(this).each(function () {
+            $(this).removeClass("active").find("ul").hide();
+        });
+        ul.slideDown(300);
+        $(this).addClass("active");
+    }
+});
+
+$(document).on('click', function (e) {
+    var target = $(e.target).closest(".btn-select");
+    if (!target.length) {
+        $(".btn-select").removeClass("active").find("ul").hide();
+    }
+});
 
 

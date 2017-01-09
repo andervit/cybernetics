@@ -1,0 +1,11 @@
+<li class="has-children">
+    <input type="checkbox" name="group-3" id="group-3">
+    <label for="group-3"><a href="/departments" class="no-style">Кафедри</a></label>
+
+    <ul>
+    {% for department in items %}
+        <li><a href="#">Кафедра Обчислювальної математики</a></li>
+    {% endfor %}
+        
+    </ul>
+</li>
