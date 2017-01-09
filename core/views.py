@@ -80,9 +80,10 @@ def study(request):
     study_info = Study_info.objects.all()[0]
     return render(request, 'core/study_main.html', {'article':article, "study_info":study_info})
 
-def library(request):
-    student = Student_action.objects.all()
-    return render(request, 'core/action.html', {'student':student})
+def library(request, slug):
+    student = Libery.objects.get(slug=slug)
+    print (student)
+    return render(request, 'core/library.html', {'student':student})
 
 def olimp(request, id):
     olimp = Olimp.objects.get(id=id)

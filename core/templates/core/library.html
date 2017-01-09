@@ -44,25 +44,18 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="wrap">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <div class="main-content-block">
                     <div class="information">
-                        <h2 class="header-text center-block">{{ article.title}}</h2>
-
-                        <div class="block-photo">
-                            {% for photo in article.image.all %}
-                            <img src="{{ photo.photo.url }}" class="image-information" alt="">
-
-                            <div class="info-photo">
-                                <p>{{ photo.alt }}</p>
-                            </div>
-                            {% endfor %}
+                        <h2 class="header-text center-block">{{ student.name }}</h2>
+                        {% for p in student.get_res %}
+                        <div class="library">
+                            <p class="library-text"><strong>1. D.A. Klyushin, S.I. Lyashko, D.A. Nomirovskii, Yu.I. Petunin, V.V. Semenov</strong><a href=""> Generalized Solutions of Operator Equations and Extreme Elements</a> — New York: Springer Science+Business Media, LLC, 2012. — 225 p.</p>
                         </div>
-                        {{ article.text|safe }}
+                        {% endfor %}
                     </div>
                 </div>
             </div>

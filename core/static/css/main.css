@@ -589,14 +589,16 @@ label,ol,ul{list-style:none;padding:0;margin:0}
 .wrap .main-content-block .schedule-table .weekday .para{text-align:center;padding:5px;border-bottom:2px solid #05dcb9}
 .wrap .main-content-block .documents-link{font-size:1em}
 .wrap .main-content-block .weekday-text{font-family:OpenSans-Semibold,sans-serif;font-size:1.2em;color:red}
-.wrap .main-content-block .information-table{border:3px solid #05dcb9;font-family:OpenSans-Regular,sans-serif;border-collapse:collapse}
+.wrap .main-content-block .btn-select,.wrap .main-content-block .information-table,.wrap .main-content-block .library{font-family:OpenSans-Regular,sans-serif}
+.wrap .main-content-block .library{padding:10px;margin-bottom:10px;border-bottom:2px solid #05dcb9;font-size:1em}
+.wrap .main-content-block .information-table{border:3px solid #05dcb9;border-collapse:collapse}
 .wrap .main-content-block .information-table td{border:2px solid #05dcb9}
 .wrap .main-content-block .information-table th{text-align:center;vertical-align:middle}
 .wrap .main-content-block .information-table .big-table-block{text-align:left;vertical-align:middle}
 .wrap .main-content-block .information-table tbody tr:nth-of-type(odd){background:0 0}
 .wrap .main-content-block .information-table tbody tr:first-child{background:#05dcb9}
 .wrap .main-content-block .select-block{margin-top:20px}
-.wrap .main-content-block .btn-select{position:relative;padding:0;min-width:236px;width:200px;border-radius:0;margin-bottom:20px;border:2px solid #05dcb9;background-color:#05dcb9;box-shadow:none;font-family:OpenSans-Regular,sans-serif}
+.wrap .main-content-block .btn-select{position:relative;padding:0;min-width:236px;width:200px;border-radius:0;margin-bottom:20px;border:2px solid #05dcb9;background-color:#05dcb9;box-shadow:none}
 .wrap .main-content-block .btn-select .btn-select-value{padding:6px 12px;display:block;position:absolute;left:0;right:34px;text-align:left;text-overflow:ellipsis;overflow:hidden;border-top:none!important;border-bottom:none!important;border-left:none!important}
 .wrap .main-content-block .btn-select .btn-select-arrow{float:right;line-height:20px;padding:6px 10px;top:0}
 .wrap .main-content-block .btn-select ul{display:none;background-color:#fff;color:#000;clear:both;list-style:none;padding:0;margin:0;border-top:none!important;position:absolute;left:-2px;right:-2px;top:34px;z-index:999}
@@ -689,3 +691,9 @@ label,ol,ul{list-style:none;padding:0;margin:0}
 #save-widget .bg-icon{background-image:url(https://maps.gstatic.com/mapfiles/embed/images/entity11.png);background-size:70px 210px;width:22px;height:22px;overflow:hidden}
 #save-widget .text-save{margin-left:10px;margin-top:4px}
 #save-widget strong{float:left;display:block;width:100%;margin-top:0;margin-bottom:10px}
+.headhesive {
+	right: 0 !important;
+}
+.nav-cybernetics {
+	right: 0 !important;
+}

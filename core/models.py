@@ -184,11 +184,15 @@ class Study_info(models.Model):
 
 
 class Libery(models.Model):
+    slug = models.CharField(max_length=250)
     name = models.CharField(max_length=250)
 
     def __str__(self):
         return self.name
 
+    def get_res(self):
+        return Publication.objects.filter(libery=self)
+        
 class Publication(models.Model):
     libery = models.ForeignKey(Libery, null=True, blank=True)
     desc  = models.TextField()
