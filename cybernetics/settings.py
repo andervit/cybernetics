@@ -25,7 +25,7 @@ SECRET_KEY = '92w6stk!61yy$9b*nk@)c=e&qzj2xc!88&m^rjgo1z$k8o6ac@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cybernetics-andervit.c9users.io']
 
 
 # Application definition
