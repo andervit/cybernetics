@@ -76,7 +76,8 @@ def student_life(request):
     return render(request, 'core/action.html', {'student':student})
 
 def study(request):
-    article = Article.objects.get(id=11)
+    article = Article.objects.get(slug="study")
+    print ('test')
     study_info = Study_info.objects.all()[0]
     return render(request, 'core/study_main.html', {'article':article, "study_info":study_info})
 
