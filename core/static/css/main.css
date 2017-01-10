@@ -343,7 +343,7 @@ label,ol,ul{list-style:none;padding:0;margin:0}
 .cd-accordion-menu li:hover label::before{color:#000}
 .no-touch .cd-accordion-menu label:hover a{background:#05dcb9;text-decoration:none}
 .no-touch .cd-accordion-menu label:hover{background:#05dcb9}
-.cd-accordion-menu label::before{content:'';display:inline-block;width:16px;height:16px;position:absolute;top:50%;background-image:url(../img/cd-icons1.png);background-repeat:no-repeat;left:18px;background-position:0 0;-webkit-transform:translateY(-50%) rotate(-90deg);-moz-transform:translateY(-50%) rotate(-90deg);-ms-transform:translateY(-50%) rotate(-90deg);-o-transform:translateY(-50%) rotate(-90deg);transform:translateY(-50%) rotate(-90deg)}
+.cd-accordion-menu label::before{content:'';display:inline-block;width:16px;height:16px;position:absolute;top:50%;background-image:url(../static/img/cd-icons1.png);background-repeat:no-repeat;left:18px;background-position:0 0;-webkit-transform:translateY(-50%) rotate(-90deg);-moz-transform:translateY(-50%) rotate(-90deg);-ms-transform:translateY(-50%) rotate(-90deg);-o-transform:translateY(-50%) rotate(-90deg);transform:translateY(-50%) rotate(-90deg)}
 .active,.carousel,.carousel-inner,.fill,.item{height:100%}
 .cd-accordion-menu label{cursor:pointer}
 .cd-accordion-menu input[type=checkbox]:checked+label::before{-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%)}
