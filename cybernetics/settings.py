@@ -127,5 +127,5 @@ LANGUAGE_CODE = 'ru-RU'
 DATE_FORMAT = 'd E Y'
 
 #local
-MEDIA_ROOT = "/home/vitalii/project/cybernetics/media"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "media/"
