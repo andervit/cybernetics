@@ -8,7 +8,7 @@
                 <div class="main-content-block">
                     <div class="information">
                         <h2 class="header-text center-block">{{ degree.name }}</h2>
-                        {{ degree.text }}
+                        {{ degree.text|safe}}
 
                         {% if degree.statistic_need %}
                         <table class="table table-striped information-table">
