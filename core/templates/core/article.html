@@ -87,7 +87,7 @@
 
                         <div class="block-photo">
                             {% for photo in article.image.all %}
-                            <img src="{{ photo.photo.url }}" class="image-information" alt="">
+                            <img src="/{{ photo.photo.url }}" class="image-information" alt="">
 
                             <div class="info-photo">
                                 <p>{{ photo.alt }}</p>

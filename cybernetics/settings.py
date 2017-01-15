@@ -130,5 +130,16 @@ DATE_FORMAT = 'd E Y'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "media/"
 SUMMERNOTE_CONFIG = {
-    'fontNames':["Open Sans"],
+        'toolbar': [
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'superscript', 'subscript',
+                  'strikethrough', 'clear']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['insert', ['link', 'picture']],
+        ['help', ['help']],
+    ],
+    'fontSizes': ['8', '9', '10', '11', '12', '14','16', '18', '24', '36'],
 }
