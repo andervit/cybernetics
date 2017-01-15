@@ -9,7 +9,7 @@
                         <h2 class="header-text center-block">Фотогалерея</h2>
                         <div id="lightgallery" class="light-gallery">
                         {% for p in photo %}
-                            <a href="{{ p.photo }}">
+                            <a href="{{ p.photo.url }}">
                                 <img src="{{ p.photo.url }}" />
                             </a>
                         {% endfor %}
