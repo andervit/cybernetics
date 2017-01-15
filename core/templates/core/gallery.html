@@ -10,7 +10,7 @@
                         <div id="lightgallery" class="light-gallery">
                         {% for p in photo %}
                             <a href="{{ p.photo }}">
-                                <img src="{{ p.photo }}" />
+                                <img src="{{ p.photo.url }}" />
                             </a>
                         {% endfor %}
                         </div>
