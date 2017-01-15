@@ -4,7 +4,7 @@
 .slick-loading .slick-slide,.slick-loading .slick-track{visibility:hidden}
 .slick-dots li button:before,.slick-next:before,.slick-prev:before{font-family:slick;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body,html{height:100%;font-size:16px}
-label,ol,ul{list-style:none;padding:0;margin:0}
+label,ol,ul{padding:0;margin:0}
 .modal-open .navbar-fixed-bottom,.modal-open-noscroll .navbar-fixed-top,body.modal-open-noscroll{margin-right:0!important}
 .landing{background-color:#f7f7f7}
 .information-link{background:url(../img/bg-light.png) #f7f7f7}
@@ -105,9 +105,10 @@ label,ol,ul{list-style:none;padding:0;margin:0}
 }
 .nav-cybernetics .logo-block{height:185px;float:left;display:inline-block}
 .nav-cybernetics .logo-block .logo-left-block{width:180px;float:left;height:185px}
-.nav-cybernetics .logo-block .logo-img{margin-top:44px;width:100%;float:left;text-align:center;display:none}
+.nav-cybernetics .logo-block .logo-img{margin-top:31px;width:100%;float:left;text-align:center;display:none}
 .nav-cybernetics .logo-block .logo-img .logo{width:115px;transition:.5s}
 .nav-cybernetics .logo-block .logo-header{float:left;width:100%;padding-right:20px;padding-top:54px}
+.nav-cybernetics .logo-block .logo-header a{text-decoration:none}
 .nav-cybernetics .logo-block .logo-header .header-title{font-family:OpenSans-Bold,sans-serif;color:#05dcb9;font-weight:600;text-align:right;transition:.5s;font-size:1.125em;letter-spacing:1px;margin:0}
 .nav-cybernetics .logo-block .logo-right-header{float:left;width:210px;margin-top:50px}
 .nav-cybernetics .logo-block .logo-right-header .header-title-text{transition:.5s;font-family:OpenSans-Regular,sans-serif;color:#05dcb9;font-size:1em;font-weight:400;text-align:left;margin-top:0;letter-spacing:.5px;line-height:20px;border-left:1.5px solid #fff;padding:10px 0 10px 20px}
@@ -179,7 +180,7 @@ label,ol,ul{list-style:none;padding:0;margin:0}
 .headhesive--stick .right-nav-block{height:50px;width:auto}
 .headhesive--stick .logo-block{height:50px}
 .headhesive--stick .logo-block .logo-left-block{width:280px;height:auto}
-.headhesive--stick .logo-block .logo-img{width:52px;margin-bottom:13px;margin-top:13px}
+.headhesive--stick .logo-block .logo-img{width:52px;margin-bottom:10px;margin-top:10px}
 .headhesive--stick .logo-block .logo-img .logo{width:52px}
 .headhesive--stick .logo-block .logo-header{padding-top:0}
 .headhesive--stick .logo-block .logo-header .header-title{margin-top:15px;font-size:1em;text-align:left}
@@ -331,7 +332,7 @@ label,ol,ul{list-style:none;padding:0;margin:0}
 100%{-ms-transform:rotate(0) scaleX(1.2) scaleY(1.2)}
 }
 .image-entrants:hover,.image-schedule:hover,.image-webcam:hover{-webkit-animation:swing 1s ease;animation:swing 1s ease;-webkit-animation-iteration-count:1;animation-iteration-count:1}
-.cd-accordion-menu{width:100%;max-width:600px;background:url(../img/bg-image.png);margin:0}
+.cd-accordion-menu{width:100%;max-width:600px;background:url(../img/bg-image.png);margin:0;list-style:none}
 .cd-accordion-menu ul{display:none}
 .cd-accordion-menu li{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .cd-accordion-menu input[type=checkbox]{position:absolute;opacity:0}
