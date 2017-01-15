@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load staticfiles %}
 {% block content %}
 <div class="site-overlay visible-xs-block visible-sm-block"></div>
 
@@ -7,7 +8,7 @@
         <img src="img/logo.png" class="logo-m-img" alt="">
         <h2 class="logo-m-text">Факультет комп'ютерних наук та кібернетики</h2>
     </a>
-    <div class="menu-btn"><img src="img/menu-icon.png" alt="">
+    <div class="menu-btn"><img src="{% static 'img/menu-icon.png'%}" alt="">
         <span class="menu-text">menu</span></div>
 </div>
 
