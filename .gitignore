@@ -1,6 +1,3 @@
 *.pyc
-cms/cms/media
-cms/cms/local_settings.py
-cms/cms/static/hotline.xml
-cms/cms/static/prom.xml
-holine/views.py
+media
+db.sqlite3
