@@ -128,7 +128,7 @@ DATE_FORMAT = 'd E Y'
 
 #local
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = "/media/"
+MEDIA_URL = "media/"
 SUMMERNOTE_CONFIG = {
         'toolbar': [
         ['style', ['style']],
